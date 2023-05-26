@@ -37,7 +37,7 @@ div#wrapper{
 
 div#header{
     grid-area: 1 / 1 / 2 / 3;
-    background-color: var(--light-blue);
+    background-color: var(--highlight-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@ div#form-button-container{
     justify-content: flex-end;
 }
 
-button#submit{
+button.submit{
     height: 30px;
     width: 80px;
     background-color: var(--light-blue);
@@ -99,4 +99,140 @@ button#submit{
 div#content{
     grid-area: 2 / 2 / 3 / 3;
     background-color: var(--dark-background);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 20px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+div.project{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    color: whitesmoke;
+    background-color: var(--light-background);
+    border: var(--highlight-color);
+    box-shadow: var(--shadow);
+    border-radius: 3px;
+}
+
+div.project.high{
+    border: solid 2px crimson;
+}
+
+div.project.medium{
+    border: solid 2px gold;
+}
+
+div.project.complete{
+    border: solid 2px greenyellow;
+}
+
+div.project > h3.p-title{
+    text-align: center;
+    font-size: 22px;
+}
+
+div.form-edit {
+    position: absolute;
+    background-color: var(--dark-background);
+    color: whitesmoke;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: solid 3px var(--highlight-color);
+    box-shadow: var(--shadow);
+    width: 500px;
+    display: none;
+}
+
+form.project-edit > fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+form.project-edit > fieldset > legend {
+    font-size: 32px;
+    text-align: center;
+}
+
+button.delete{
+    height: 30px;
+    width: 80px;
+    background-color: crimson;
+    color: whitesmoke;
+    border: crimson solid 2px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+div#edit-button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.project-view{
+    position: absolute;
+    background-color: var(--dark-background);
+    color: whitesmoke;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 3px var(--highlight-color);
+    box-shadow: var(--shadow);
+    width: 400px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    display: none;
+}
+
+div.project-view > .project-header{
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    background-color: var(--light-background);
+    padding: 20px;
+}
+
+.project-header > h2.project-title{
+    font-size: 25px;
+}
+
+.project-view > div.todo-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+div.tasks{
+    display: grid;
+    gap: 30px;
+    overflow: scroll;
+    height: 400px;
+}
+
+div.todo{
+    display: flex;
+    gap: 30px;
+    background-color: var(--highlight-color);
+    padding: 10px;
+    border: dashed whitesmoke 1px;
+    border-radius: 5px;
+}
+
+div.todo > p{
+    width: 80%;
 }
