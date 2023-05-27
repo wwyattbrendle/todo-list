@@ -12,6 +12,7 @@
             <h2 class="project-title">Insert title</h2>
             <button class="edit">Edit Details</button>
         </div>
+        <div class="project-date">insert date header</div>
         <div class="todo-list-container">
             <button class="add">Add Task</button>
             <div class="tasks">
@@ -29,22 +30,22 @@
 
                 <div class="form-input">
                     <label for="title">Title:</label>
-                    <input type="text" name="title" id="title">
+                    <input type="text" name="title" class="title">
                 </div>
                 <div class="form-input">
                     <label for="due-date">Due Date:</label>
-                    <input type="date" name="due-date" id="due-date">
+                    <input type="date" name="due-date" class="due-date">
                 </div>
                 <div class="form-input">
                     <label for="description">Description:</label>
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <textarea name="description" class="description" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-input">
                     <label for="priority">Priority</label>
-                    <select name="priority" id="priority">
-                        <option value="low" id="option-low">Low</option>
-                        <option value="medium" id="option-medium">Medium</option>
-                        <option value="high" id="option-high">High</option>
+                    <select name="priority" id="edit-priority">
+                        <option value="low" class="option-low">Low</option>
+                        <option value="medium" class="option-medium">Medium</option>
+                        <option value="high" class="option-high">High</option>
                     </select>
                 </div>
                 <div id="edit-button-container">
@@ -59,7 +60,7 @@
             <h1>Projects</h1>
         </div>
         <div id="side-bar">
-            <form id="project-form" action="">
+            <form id="project-form" action="" method="post">
                 <fieldset>
                     <legend>Add Project</legend>
 
@@ -84,7 +85,7 @@
                         </select>
                     </div>
                     <div id="form-button-container">
-                        <button class="submit">Submit</button>
+                        <button class="submit" id="submit-btn">Submit</button>
                     </div>
                 </fieldset>
             </form>

@@ -235,4 +235,6 @@ div.todo{
 
 div.todo > p{
     width: 80%;
+}div.project-date {
+    text-align: center;
 }
