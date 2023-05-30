@@ -192,7 +192,6 @@ div.project-view{
     height: 600px;
     display: grid;
     grid-template-rows: 1fr 5fr;
-    display: none;
 }
 
 div.project-view > .project-header{
@@ -235,6 +234,7 @@ div.todo{
 
 div.todo > p{
     width: 80%;
+    
 }div.project-date {
     text-align: center;
 }
