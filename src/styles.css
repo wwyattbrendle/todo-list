@@ -148,7 +148,7 @@ div.form-edit {
     border: solid 3px var(--highlight-color);
     box-shadow: var(--shadow);
     width: 500px;
-    display: none;
+
 }
 
 form.project-edit > fieldset {
@@ -174,9 +174,9 @@ button.delete{
     box-shadow: var(--shadow);
 }
 
-div#edit-button-container{
+div.edit-button-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 div.project-view{

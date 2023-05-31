@@ -1,6 +1,7 @@
 import { DOMHandler } from "./DOMHandler.js";
 import { createTask } from "./task.js";
 import { projectArray } from "./array.js";
+import { editForm } from "./formEdit.js";
 
 class projectView {
     constructor(title, date, description, priority, index){
@@ -72,6 +73,7 @@ class projectView {
             if(input.value){
                 tasks.appendChild(createTask(input.value));
                 projectArray[index].addTask(input.value);
+                input.value = "";
             }
         });
 
@@ -80,6 +82,12 @@ class projectView {
                 tasks.appendChild(createTask(projectArray[index].tasks[i]));
             }
         }
+
+        editBtn.addEventListener("click", function() {
+            const test = new editForm(index);
+            DOMHandler.unappendBody(element);
+            DOMHandler.appendContent(test.createElement());
+        });
 
         return element;
         //editBtn.setAttribute("onclick", "self.close()");

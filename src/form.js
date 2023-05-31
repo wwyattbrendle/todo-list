@@ -1,6 +1,7 @@
 import { projectElement } from './project-element-creator.js';
 import { DOMHandler } from './DOMHandler.js';
 import { arrayElement, projectArray } from './array.js';
+import { elementArray } from './elementArray.js';
 
 //object that stores DOM elements for project creation
 const addProjectForm = function() {
@@ -56,6 +57,7 @@ const addProjectForm = function() {
         const thisElement = new projectElement(projectArray[index].title, projectArray[index].date, projectArray[index].description, projectArray[index].priority, projectArray[index].index);
         thisElement.log();
         DOMHandler.appendContent(thisElement.createElement());
+        elementArray.push(thisElement);
         addProjectForm.resetForm();
     });
 
