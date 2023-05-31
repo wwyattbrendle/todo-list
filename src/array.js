@@ -6,6 +6,7 @@ class arrayElement {
         this._description = description;
         this._priority = priority;
         this._index = index;
+        this._tasks = [];
     }
 
     get title() {return this._title};
@@ -20,7 +21,13 @@ class arrayElement {
     get priority() {return this._priority};
     set priority(input) {if(input){this._priority = input}};
 
+    get tasks() {return this._tasks};
+
     get index() {return this._index};
+
+    addTask = function(input){
+        this._tasks.push(input);
+    }
 
     add = function() {
         projectArray.push(this);

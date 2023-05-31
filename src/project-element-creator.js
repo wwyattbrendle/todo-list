@@ -1,6 +1,7 @@
 import { addProjectForm } from './form.js';
 import { projectView } from './project-view.js';
 import { projectArray } from './array.js';
+import { DOMHandler } from './DOMHandler.js';
 
 class projectElement {
     constructor(title, date, description, priority, index){
@@ -31,7 +32,7 @@ class projectElement {
         element.appendChild(p);
         element.appendChild(button);
 
-        if(this.priority.value === "medium"){
+        if(this.priority === "medium"){
             element.classList.add("medium");
         } else if(this.priority === "high"){
             element.classList.add("high");
@@ -40,8 +41,8 @@ class projectElement {
         let index = this.index;
 
         button.addEventListener("click", function(){
-            const viewProject = new projectView(projectArray[index].title, projectArray[index].date, projectArray[index].description, projectArray[index].priority);
-            document.body.appendChild(viewProject.createElement());
+            const viewProject = new projectView(projectArray[index].title, projectArray[index].date, projectArray[index].description, projectArray[index].priority, index);
+            DOMHandler.appendBody(viewProject.createElement());
         });
 
         return element;
