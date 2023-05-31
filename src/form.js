@@ -18,21 +18,9 @@ const addProjectForm = function() {
         priority.value = "low";
     }
 
-  /*  const processDate = (adate) => {
-        let splitArray = new Array();
-        splitArray = adate.split("-");
-        let year = splitArray[0];
-        let month = splitArray[1];
-        let day = splitArray[2];
-        let date = new Date(year, month, day);
-        return date.toDateString();
-    } */
-
     const getIndex = () => {
         return projectArray.length;
     }
-
-   // const savedDate = processDate(dueDate.value);
     
     return{
         title,
@@ -40,7 +28,6 @@ const addProjectForm = function() {
         dueDate,
         description,
         priority,
-    //    savedDate,
         resetForm,
         getIndex,
     }
@@ -50,12 +37,8 @@ const addProjectForm = function() {
         event.preventDefault();
         const thisProject = new arrayElement(addProjectForm.title.value, addProjectForm.dueDate.value, addProjectForm.description.value, addProjectForm.priority.value, addProjectForm.getIndex());
         let index = addProjectForm.getIndex();
-        //console.log(index);
-        //console.log(addProjectForm.dueDate.value);
-        //console.log(addProjectForm.savedDate);
         thisProject.add();
         const thisElement = new projectElement(projectArray[index].title, projectArray[index].date, projectArray[index].description, projectArray[index].priority, projectArray[index].index);
-        thisElement.log();
         DOMHandler.appendContent(thisElement.createElement());
         elementArray.push(thisElement);
         addProjectForm.resetForm();

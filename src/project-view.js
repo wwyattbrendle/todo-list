@@ -90,7 +90,6 @@ class projectView {
         });
 
         return element;
-        //editBtn.setAttribute("onclick", "self.close()");
     }
 
 }

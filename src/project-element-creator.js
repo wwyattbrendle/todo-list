@@ -71,12 +71,6 @@ class projectElement {
             element.classList.remove('medium');
         }
     }
-
-    log = function(){
-        console.log(this.title);
-        console.log(this.date);
-        console.log(this.index);
-    }
 }
 
 export {projectElement};
